@@ -4,7 +4,13 @@ inspiring from [command line - Adding a directory to the PATH environment variab
 
 ## get started add path...
 
-run `npx winpath add /path/to/your/bin/`
+Run one of this...
+
+```
+npx winpath add /path/to/your/bin/
+
+npx https://github.com/snomiao/winpath add /path/to/your/bin/
+```
 
 ## reference:
 

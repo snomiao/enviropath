@@ -1,6 +1,6 @@
 const yargs = require('yargs/yargs')
 import { hideBin } from 'yargs/helpers';
-import { add, del, resolve } from './winpath';
+import { add, del, resolve } from './envpath';
 
 console.log(process.argv)
 

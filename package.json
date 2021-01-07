@@ -1,9 +1,11 @@
 {
-  "name": "winpath",
+  "name": "envpath",
   "version": "0.1.0",
-  "description": "winpath append by set path=%path%;/path/to/your/bin",
+  "description": "envpath append by set path=%path%;/path/to/your/bin, worked only windows at 2021-01-07",
   "main": "index.js",
-  "bin": "./bin/winpath.js",
+  "bin": {
+    "envpath": "bin/envpath.js"
+  },
   "scripts": {},
   "private": false,
   "author": "snomiao@gmail.com",
@@ -13,5 +15,14 @@
   },
   "devDependencies": {
     "@types/node": "^14.14.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snomiao/winpath.git"
+  },
+  "bugs": {
+    "url": "https://github.com/snomiao/winpath/issues"
+  },
+  "homepage": "https://github.com/snomiao/winpath#readme"
 }
+kk
