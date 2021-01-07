@@ -1,19 +1,31 @@
-const yargs = require('yargs/yargs')
-import { hideBin } from 'yargs/helpers';
-import { add, del, resolve } from './envpath';
+import yargs from 'yargs'
+import child_process, { exec } from 'child_process';
+import { accessSync } from 'fs';
+import path from 'path';
+import { promisify } from 'util';
+import * as _ from 'lodash';
+import { powerShellExec, systemEnviromentPathAdd, systemEnviromentPathDelete, systemPathGet } from './powerShellExec';
 
-console.log(process.argv)
+/**
+ * 
+ * author: YiDong Zhuo(snomiao@gmail.com)
+ */
+// if (require.main === module) main().then(console.log).catch(console.error)
+if (require.main === module) main().then(console.log).catch(console.error)
 
-yargs(hideBin(process.argv))
-    .command('add <path>', 'add this path to %path%', () => { }, (argv: { path: string; }) => {
-        add(argv.path);
-    })
-    .command('del <path>', 'del this path from %path%', () => { }, (argv: { path: string; }) => {
-        del(argv.path);
-    })
-    .command('resolve <path>', 'resolve this path', () => { }, (argv: { path: string; }) => {
-        resolve(argv.path)
-    })
-    .strictCommands()
-    .demandCommand(1)
-    .argv;
+export async function main() {
+    yargs
+        .command('add <path>', 'add this path to %path%', () => { }, (argv: { path: string; }) => {
+            systemEnviromentPathAdd(argv.path)
+        })
+        .command('del <path>', 'del this path from %path%', () => { }, (argv: { path: string; }) => {
+            systemEnviromentPathDelete(argv.path);
+        })
+        .command('check', 'fix %path%', () => { }, (argv: { path: string; }) => {
+            systemEnviromentPathDelete(argv.path);
+        })
+        .help('h').alias('h', 'help')
+        .strictCommands()
+        .demandCommand(1)
+        .argv;
+}
