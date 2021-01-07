@@ -1,0 +1,17 @@
+{
+  "name": "winpath",
+  "version": "0.1.0",
+  "description": "winpath append by set path=%path%;/path/to/your/bin",
+  "main": "index.js",
+  "bin": "./bin/winpath.js",
+  "scripts": {},
+  "private": false,
+  "author": "snomiao@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.20"
+  }
+}
