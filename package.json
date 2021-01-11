@@ -1,6 +1,6 @@
 {
   "name": "enviropath",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "windows %path% append by set path=%path%;/path/to/your/bin, worked only windows at 2021-01-07",
   "main": "dist/index.js",
   "bin": "cli.js",
