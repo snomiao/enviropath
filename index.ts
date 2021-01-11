@@ -1,10 +1,6 @@
 import yargs from 'yargs'
-import child_process, { exec } from 'child_process';
-import { accessSync } from 'fs';
-import path from 'path';
-import { promisify } from 'util';
 import * as _ from 'lodash';
-import { powerShellExec, systemEnviromentPathAdd, systemEnviromentPathDelete, systemPathGet } from './powerShellExec';
+import { systemEnviromentPathAdd, systemEnviromentPathDelete, systemEnviromentPathFix, } from './powerShellExec';
 
 /**
  * 
@@ -21,8 +17,8 @@ export async function main() {
         .command('del <path>', 'del this path from %path%', () => { }, (argv: { path: string; }) => {
             systemEnviromentPathDelete(argv.path);
         })
-        .command('check', 'fix %path%', () => { }, (argv: { path: string; }) => {
-            systemEnviromentPathDelete(argv.path);
+        .command('fix', 'fix %path%', () => { }, (argv: { path: string; }) => {
+            systemEnviromentPathFix();
         })
         .help('h').alias('h', 'help')
         .strictCommands()

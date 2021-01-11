@@ -11,14 +11,14 @@ if (require.main === module) (async () => {
 })().then(console.log).catch(console.error)
 
 
-export async function systemEnviromentPathAdd(path) {
+export async function systemEnviromentPathAdd(path: string) {
     let pathList = await systemEnviromentPathListGet();
     pathList.push(path)
     pathList = await asyncFilter(sortedUniq(pathList), fileExists);
     return await systemEnviromentPathListSet(pathList);
 }
 
-export async function systemEnviromentPathDelete(path) {
+export async function systemEnviromentPathDelete(path: string) {
     let pathList = await systemEnviromentPathListGet();
     pathList = pathList.filter(p => p !== path)
     pathList = await asyncFilter(sortedUniq(pathList), fileExists);
@@ -31,9 +31,9 @@ export async function systemEnviromentPathFix() {
     return await systemEnviromentPathListSet(pathList);
 }
 
-function asyncFilter(arr, predicate) {
-    return Promise.all(arr.map(predicate))
-        .then((results) => arr.filter((_v, index) => results[index]));
+async function asyncFilter(arr: string[], predicate: { (path: string): Promise<boolean>; (path: string): Promise<boolean>; (path: string): Promise<boolean>; }) {
+    const results = await Promise.all(arr.map(predicate));
+    return arr.filter((_v: any, index: string | number) => results[index]);
 }
 
 async function fileExists(path: string): Promise<boolean> {
