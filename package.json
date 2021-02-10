@@ -7,7 +7,7 @@
     "enviropath": "dist/src/cli.js"
   },
   "scripts": {
-    "build": "tsc && git commit -a -m auto && npm version patch && npm pack",
+    "build": "tsc && git commit -a -m auto && git push && npm version patch && npm pack",
     "prepublishOnly": "",
     "prepare": "tsc",
     "test": "ts-node test/powerShellExec"
