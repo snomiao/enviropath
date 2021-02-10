@@ -1,6 +1,6 @@
 {
   "name": "enviropath",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "windows %path% append by set path=%path%;/path/to/your/bin, worked only windows at 2021-01-07",
   "main": "lib/enviropath.js",
   "bin": {
