@@ -3,18 +3,15 @@
   "version": "1.0.1",
   "description": "windows %path% append by set path=%path%;/path/to/your/bin, worked only windows at 2021-01-07",
   "main": "dist/src/enviropath.js",
-  "bin": {
-    "enviropath": "dist/src/cli.js"
-  },
+  "bin": "dist/src/cli.js",
   "scripts": {
-    "dev": "node cli.js",
-    "prepack": "git commit -a -m auto && npm version patch",
+    "pack": "git commit -a -m auto && npm version patch && npm pack",
     "prepublishOnly": "",
     "prepare": "tsc",
-    "test": "npm run dev resolve C:/"
+    "test": "ts-node test/powerShellExec"
   },
   "files": [
-    "dist"
+    "dist/src"
   ],
   "private": false,
   "author": "snomiao@gmail.com",
