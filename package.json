@@ -1,9 +1,11 @@
 {
   "name": "enviropath",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "windows %path% append by set path=%path%;/path/to/your/bin, worked only windows at 2021-01-07",
   "main": "dist/src/enviropath.js",
-  "bin": "dist/src/cli.js",
+  "bin": {
+    "enviropath": "dist/src/cli.js"
+  },
   "scripts": {
     "dev": "node cli.js",
     "prepack": "git commit -a -m auto && npm version patch",
@@ -11,7 +13,9 @@
     "prepare": "tsc",
     "test": "npm run dev resolve C:/"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "private": false,
   "author": "snomiao@gmail.com",
   "license": "ISC",
