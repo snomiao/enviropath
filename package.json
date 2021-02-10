@@ -2,18 +2,18 @@
   "name": "enviropath",
   "version": "1.0.4",
   "description": "windows %path% append by set path=%path%;/path/to/your/bin, worked only windows at 2021-01-07",
-  "main": "dist/src/enviropath.js",
+  "main": "lib/enviropath.js",
   "bin": {
-    "enviropath": "dist/src/cli.js"
+    "enviropath": "bin/cli"
   },
   "scripts": {
-    "build": "git pull && tsc && git commit -a -m auto && git push && npm version patch && npm pack",
+    "build": "tsc",
+    "prepare": "git commit -a -m auto && git push && npm version patch",
     "prepublishOnly": "",
-    "prepare": "tsc",
     "test": "ts-node test/powerShellExec"
   },
   "files": [
-    "dist/src"
+    "lib"
   ],
   "private": false,
   "author": "snomiao@gmail.com",

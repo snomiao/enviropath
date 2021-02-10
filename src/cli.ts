@@ -6,8 +6,8 @@ import yargs from 'yargs'
 import { enviropathAdd, enviropathDelete, enviropathFix } from './enviropath';
 
 // if (require.main === module) main()
-
-yargs
+// hideBin
+const argv = yargs
     .command('add <path>', 'add this path to %path%', () => { }, (argv: { path: string; }) => {
         enviropathAdd(argv.path)
     })
@@ -22,3 +22,4 @@ yargs
     // .strictCommands()
     // .demandCommand(1)
     .argv;
+console.log(argv);
