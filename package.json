@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "git pull && tsc && git commit -a -m preversion && npm version patch && git commit -a -m version && git push",
+    "prepublishOnly": "git pull && tsc && git commit -a -m preversion && npm version patch && git push",
     "test": "ts-node test/powerShellExec"
   },
   "files": [
