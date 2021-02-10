@@ -7,8 +7,8 @@
     "enviropath": "bin/cli"
   },
   "scripts": {
-    "build": "tsc",
-    "prepublishOnly": "git pull && tsc && git commit -a -m preversion && git push && npm version patch",
+    "build": "tsc && git commit -a -m build && git push && npm version patch",
+    "pub": "git pull && tsc && git commit -a -m preversion && npm version patch",
     "test": "ts-node test/powerShellExec"
   },
   "files": [
