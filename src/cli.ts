@@ -19,6 +19,6 @@ yargs
     })
     .help('h').alias('h', 'help')
     .version()
-    .strictCommands()
-    .demandCommand(1)
+    // .strictCommands()
+    // .demandCommand(1)
     .argv;
